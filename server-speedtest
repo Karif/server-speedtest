@@ -40,11 +40,12 @@ echo               '------------------------------------'
 download_benchmark 'OVH, Montreal, Canada' 'http://proof.ovh.ca/files/100Mio.dat'
 download_benchmark 'Linode, Atlanta, GA, USA' 'http://speedtest.atlanta.linode.com/100MB-atlanta.bin'
 download_benchmark 'Linode, Dallas, TX, USA' 'http://speedtest.dallas.linode.com/100MB-dallas.bin'
-download_benchmark 'CDN77 Chicago, USA' 'http://793343545.r.cdn77.net/design/swf/testfile100.bin'
+download_benchmark 'FDC, Chicago, USA' 'http://lg.chi2-c.fdcservers.net/100MBtest.zip'
 download_benchmark 'Softlayer, Seattle, WA, USA' 'http://speedtest.sea01.softlayer.com/downloads/test100.zip'
 download_benchmark 'Softlayer, San Jose, CA, USA' 'http://speedtest.sjc01.softlayer.com/downloads/test100.zip'
 download_benchmark 'Softlayer, Washington, DC, USA' 'http://speedtest.wdc01.softlayer.com/downloads/test100.zip'
 download_benchmark 'Leaseweb, Manassas, VA, USA' 'http://mirror.us.leaseweb.net/speedtest/100mb.bin'
+download_benchmark '10Gbps.io, New York, USA' 'http://nyc.download.datapacket.com/100mb.bin'
 
 echo
 echo               '------------------------------------'
@@ -52,12 +53,15 @@ echo               '      Western & Southern Europe     '
 echo               '------------------------------------'
 download_benchmark 'OVH, Paris, France' 'http://proof.ovh.net/files/100Mio.dat'
 download_benchmark 'Linode, London, UK' 'http://speedtest.london.linode.com/100MB-london.bin'
+download_benchmark '10Gbps.io, London, UK' 'http://lon.download.datapacket.com/100mb.bin'
 download_benchmark 'Leaseweb, Haarlem, NL' 'http://mirror.nl.leaseweb.net/speedtest/100mb.bin'
 download_benchmark 'SmartDC, Rotterdam, NL' 'http://mirror.i3d.net/100mb.bin'
-download_benchmark 'Hetzner, Nuernberg, DE' 'http://hetzner.de/100MB.iso'
+download_benchmark 'Hetzner, Nuernberg, DE' 'https://speed.hetzner.de/100MB.bin'
+download_benchmark '10Gbps.io, Frankfurt, DE' 'http://fra.download.datapacket.com/100mb.bin'
 download_benchmark 'Nessus, Vienna, AT' 'http://lg.as47692.net/tools/100MB.test'
 download_benchmark 'SeFlow (MIX), Milan, IT' 'http://www.seflow.it/infrastruttura/100MB.test'
 download_benchmark 'EDIS (Colt), Madrid, ES' 'http://es.edis.at/100mb.bin'
+download_benchmark '10Gbps.io, Madrid, ES' 'http://mad.download.datapacket.com/100mb.bin'
 download_benchmark 'GinerNet (iDataGreen), Barcelona, ES' 'http://bcn.ginernet.com/100MB.test'
 download_benchmark 'OTENet, Greece' 'http://speedtest.ftp.otenet.gr/files/test100Mb.db'
 
@@ -91,9 +95,10 @@ echo
 echo               "####################################"
 echo               "#        speedtest.net CLI         #"
 echo               "####################################"
-wget --quiet --no-check-certificate https://raw.github.com/sivel/speedtest-cli/master/speedtest_cli.py
-python speedtest_cli.py
-rm speedtest_cli.py
+wget --quiet --no-check-certificate https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+./speedtest-cli
+rm -f speedtest-cli
 
 echo               "####################################"
 echo               "#            Traceroute            #"
