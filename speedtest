@@ -10,7 +10,7 @@ function download_benchmark() {
 }
 
 function do_traceroute() {
-	TRACEROUTE=`traceroute $2 2>&1`
+	TRACEROUTE=`tracepath $2 2>&1`
 	echo "Traceroute to $1..."
 	echo "$TRACEROUTE"
 	echo
@@ -93,14 +93,6 @@ download_benchmark 'Linode, Tokyo, JP' 'http://speedtest.tokyo.linode.com/100MB-
 download_benchmark 'Softlayer, Singapore' 'http://speedtest.sng01.softlayer.com/downloads/test100.zip'
 download_benchmark 'Digital Ocean, Singapore' 'http://speedtest-sgp1.digitalocean.com/100mb.test'
 
-echo
-echo               "####################################"
-echo               "#        speedtest.net CLI         #"
-echo               "####################################"
-wget --quiet --no-check-certificate https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py
-chmod +x speedtest-cli
-./speedtest-cli
-rm -f speedtest-cli
 
 echo               "####################################"
 echo               "#            Traceroute            #"
